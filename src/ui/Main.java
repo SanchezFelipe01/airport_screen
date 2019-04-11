@@ -13,7 +13,11 @@ public class Main extends Application{
 	public static void main(String[] args) {
 		Airport a = new Airport(10);
 		System.out.println(a.report());
-		launch(args);
+		a.sortByGate();
+		//a.sortByHour();
+		//a.sortByDate();
+		System.out.println(a.report());
+		//launch(args);
 		
 	}
 	
