@@ -100,10 +100,10 @@ public class Airport {
 //___________________________________________________________________________________________
 	
 	public String report() {
-		String msg = "DATE		HOUR		AIRLINE		FLIGHT		DESTINY		GATE" + "\n";
+		String msg = "DATE		HOUR		AIRLINE			FLIGHT		DESTINY		GATE" + "\n";
 		
 		for (int i = 0; i < flights.length; i++) {
-			msg += flights[i].getDate() + "\t" + flights[i].getConvertedHour() + "\t\t" + flights[i].getAirLine() + "\t\t" + flights[i].getnFlight() + "\t\t" + flights[i].getDestiny() + "\t\t" + flights[i].getGate() + "\n";
+			msg += flights[i].getDate() + "\t" + flights[i].getConvertedHour() + "\t\t" + flights[i].getAirLine() + "\t\t\t" + flights[i].getnFlight() + "\t\t" + flights[i].getDestiny() + "\t\t" + flights[i].getGate() + "\n";
 		}
 		
 		return msg;
@@ -222,11 +222,14 @@ public class Airport {
         	msg = flight.getDate() + "\t" + flight.getHour() + "\t" + flight.getAirLine() + "\t" + flight.getnFlight() + "\t" + flight.getDestiny() + "\t" + flight.getGate();
         
         }
+        System.out.println(msg);
         return msg;
 	}
 //________________________________________________________________________________________________
 	
 	public String searchByDestiny(String destiny) {
+		
+		sortByDestiny();
 		
 		String msg = "Can not find the flight";
 		Flight flight;
@@ -253,6 +256,7 @@ public class Airport {
         	msg = flight.getDate() + "\t" + flight.getHour() + "\t" + flight.getAirLine() + "\t" + flight.getnFlight() + "\t" + flight.getDestiny() + "\t" + flight.getGate();
         
         }
+        System.out.println(msg);
         return msg;
 		
 	}

@@ -15,9 +15,9 @@ public class Flight implements Comparable<Flight>{
 	private int gate;
 	
 	public final static String AVIANCA = "Avianca";
-	public final static String LAN = "Lan";
+	public final static String LAN = "Lan    ";
 	public final static String IBERIA = "Iberia";
-	public final static String FLY = "Fly";
+	public final static String FLY = "Fly    ";
 	
 	public final static String BOGOTA = "Bogota";
 	public final static String MIAMI = "Miami";
@@ -25,7 +25,7 @@ public class Flight implements Comparable<Flight>{
 	public final static String TOKIO = "Tokio";
 	public final static String NEWYORK = "New York";
 	public final static String DUBAI = "Dubai";
-	public final static String PARIS = "Paris";
+	public final static String PARIS = "Paris ";
 	public final static String BERLIN = "Berlin";
 	
 	

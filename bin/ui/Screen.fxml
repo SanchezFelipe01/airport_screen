@@ -31,25 +31,44 @@
          <children>
             <HBox prefHeight="51.0" prefWidth="156.0">
                <children>
-                  <TextField fx:id="newNumber" prefHeight="25.0" prefWidth="49.0" />
-                  <Button mnemonicParsing="false" onAction="#newList" prefHeight="25.0" prefWidth="88.0" text="New List" />
+                  <TextField fx:id="newNumber" prefHeight="25.0" prefWidth="81.0" />
+                  <Button mnemonicParsing="false" onAction="#newList" prefHeight="25.0" prefWidth="75.0" text="New List" />
                </children>
             </HBox>
-            <VBox prefHeight="188.0" prefWidth="156.0">
+            <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Label text="Sort By:">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <Button mnemonicParsing="false" onAction="#sortByDate" prefHeight="25.0" prefWidth="70.0" text="DATE" />
-                  <Button mnemonicParsing="false" onAction="#sortByTime" prefWidth="70.0" text="TIME" />
-                  <Button mnemonicParsing="false" onAction="#sortByAirline" prefWidth="70.0" text="AIRLINE" />
-                  <Button mnemonicParsing="false" onAction="#sortByFlight" prefWidth="70.0" text="#FLIGHT" />
-                  <Button mnemonicParsing="false" onAction="#sortByDestiny" prefWidth="70.0" text="DESTINY" />
-                  <Button mnemonicParsing="false" onAction="#SortByGate" prefWidth="70.0" text="GATE" />
+                  <VBox prefHeight="188.0" prefWidth="156.0">
+                     <children>
+                        <Label text="Sort By:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Button mnemonicParsing="false" onAction="#sortByDate" prefHeight="25.0" prefWidth="70.0" text="DATE" />
+                        <Button mnemonicParsing="false" onAction="#sortByTime" prefWidth="70.0" text="TIME" />
+                        <Button mnemonicParsing="false" onAction="#sortByAirline" prefWidth="70.0" text="AIRLINE" />
+                        <Button mnemonicParsing="false" onAction="#sortByFlight" prefWidth="70.0" text="#FLIGHT" />
+                        <Button mnemonicParsing="false" onAction="#sortByDestiny" prefWidth="70.0" text="DESTINY" />
+                        <Button mnemonicParsing="false" onAction="#SortByGate" prefWidth="70.0" text="GATE" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="177.0" prefWidth="158.0">
+                     <children>
+                        <Label text="Search By:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Button mnemonicParsing="false" onAction="#searchByDate" prefHeight="25.0" prefWidth="70.0" text="DATE" />
+                        <Button mnemonicParsing="false" onAction="#searchByTime" prefWidth="70.0" text="TIME" />
+                        <Button mnemonicParsing="false" onAction="#searchByAirline" prefWidth="70.0" text="AIRLINE" />
+                        <Button mnemonicParsing="false" onAction="#searchByFlight" prefWidth="70.0" text="#FLIGHT" />
+                        <Button mnemonicParsing="false" onAction="#searchByDestiny" prefWidth="70.0" text="DESTINY" />
+                        <Button mnemonicParsing="false" onAction="#SearchByGate" prefWidth="70.0" text="GATE" />
+                     </children>
+                  </VBox>
                </children>
-            </VBox>
+            </HBox>
             <HBox prefHeight="38.0" prefWidth="156.0">
                <children>
                   <Label text="DURATION: " />

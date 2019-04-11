@@ -13,15 +13,15 @@ public class Main extends Application{
 	
 
 	public static void main(String[] args) {
-		Airport a = new Airport(10);
-		System.out.println(a.report());
-		Scanner s = new Scanner(System.in);
+		//Airport a = new Airport(10);
+		//System.out.println(a.report());
+		//Scanner s = new Scanner(System.in);
 		//String i = s.nextLine();
-		int h = s.nextInt();
+		//String h = s.nextLine();
 		//int m = s.nextInt();
-		a.searchByGate(h);
-		System.out.println(a.report());
-		//launch(args);
+		//a.searchByAirLine(h);
+		//System.out.println(a.report());
+		launch(args);
 		
 	}
 	
