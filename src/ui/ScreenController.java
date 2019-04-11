@@ -1,14 +1,12 @@
 package ui;
 
+import java.io.IOException;
 import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import model.Airport;
 
@@ -27,9 +25,18 @@ public class ScreenController {
 
     @FXML
     private TextField newNumber;
+    
+    @FXML
+    private TextField sHour;
+    
+    @FXML
+    private TextField sMinutes;
+    
+    @FXML
+    private TextField value;
 
     @FXML
-    void newList(ActionEvent event) {
+    void newList(ActionEvent event) throws IOException {
     	convertedHour();
     	int n = Integer.valueOf(newNumber.getText());
     	airport = new Airport(n);
@@ -174,7 +181,15 @@ public class ScreenController {
 
     @FXML
     void searchByDate(ActionEvent event) {
-
+    	VBox vbox = new VBox();
+    	
+    	Label l;
+    	
+    	l = new Label();
+    	l.setText(airport.searchByDate(value.getText()));
+    	vbox.getChildren().add(l);
+    	
+    	scrollPane.setContent(vbox);
     }
 
     @FXML
@@ -189,7 +204,17 @@ public class ScreenController {
 
     @FXML
     void searchByTime(ActionEvent event) {
-
+    	VBox vbox = new VBox();
+    	
+    	Label l;
+    	
+    	l = new Label();
+    	int h = Integer.valueOf(sHour.getText());
+    	int m = Integer.valueOf(sMinutes.getText());
+    	l.setText(airport.searchByHour(h, m));
+    	vbox.getChildren().add(l);
+    	
+    	scrollPane.setContent(vbox);
     }
     
     @FXML
@@ -198,7 +223,7 @@ public class ScreenController {
     }
     
     @FXML
-    public void initialize() {
+    public void initialize() throws IOException {
     	convertedHour();
     	airport = new Airport(100);
     	airport.sortByDate();

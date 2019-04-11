@@ -1,5 +1,6 @@
 package model;
 
+import java.io.IOException;
 import java.util.Arrays;
 
 public class Airport {
@@ -8,7 +9,7 @@ public class Airport {
 	
 //___________________________________________________________________________________
 	
-	public Airport(int n) {
+	public Airport(int n) throws IOException {
 		flights = new Flight[n];
 
 		for (int i = 0; i < flights.length; i++) {
@@ -131,7 +132,6 @@ public class Airport {
 			
 			flight = flights[index];
 			msg = flight.getDate() + "\t" + flight.getHour() + "\t" + flight.getAirLine() + "\t" + flight.getnFlight() + "\t" + flight.getDestiny() + "\t" + flight.getGate();
-			System.out.println(msg);
 		}
 		return msg;
 		
@@ -157,7 +157,7 @@ public class Airport {
 			flight = flights[index];
 			msg = flight.getDate() + "\t" + flight.getHour() + "\t" + flight.getAirLine() + "\t" + flight.getnFlight() + "\t" + flight.getDestiny() + "\t" + flight.getGate();
 		}
-		System.out.println(msg);
+
 		return msg;
 	}
 //_____________________________________________________________________________________________
@@ -283,7 +283,7 @@ public class Airport {
 			msg = flight.getDate() + "\t" + flight.getHour() + "\t" + flight.getAirLine() + "\t" + flight.getnFlight() + "\t" + flight.getDestiny() + "\t" + flight.getGate();
 			
 		}
-		System.out.println(msg);
+		
 		return msg;
 	}
 //________________________________________________________________________________________________

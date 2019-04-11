@@ -1,5 +1,9 @@
 package model;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.LocalTime;
 import java.util.Calendar;
@@ -11,61 +15,45 @@ public class Flight implements Comparable<Flight>{
 	private LocalTime hour;
 	private String airLine;
 	private String nFlight;
-	private String Destiny;
+	private String destiny;
 	private int gate;
 	
-	public final static String AVIANCA = "Avianca";
-	public final static String LAN = "Lan    ";
-	public final static String IBERIA = "Iberia";
-	public final static String FLY = "Fly    ";
-	
-	public final static String BOGOTA = "Bogota";
-	public final static String MIAMI = "Miami";
-	public final static String MADRID = "Madrid";
-	public final static String TOKIO = "Tokio";
-	public final static String NEWYORK = "New York";
-	public final static String DUBAI = "Dubai";
-	public final static String PARIS = "Paris ";
-	public final static String BERLIN = "Berlin";
+	public final static String PATH_AIRLINES = "Data/Airlines.txt";
+	public final static String PATH_CITIES = "Data/Cities.txt";
 	
 	
-	public Flight() {
+	public Flight() throws IOException {
 		
 		randomDate();
 		randomTime();
-		this.airLine = randomAirLine();
+		randomAirLine1();
 		this.nFlight = randomFlight();
-		this.Destiny = randomDestiny();
+		randomDestiny();
 		this.gate = (int)(Math.random()* 10) + 1;
 	}
 	
-	private String randomAirLine() {
-		String airLine = "";
-		int i = (int)(Math.random()*4) + 1;
-		switch (i) {
-		case 1:
-			airLine = AVIANCA;
-			break;
+	private void randomAirLine1() throws IOException {
+		FileReader fr = new FileReader(new File(PATH_AIRLINES));
+		BufferedReader br = new BufferedReader(fr);
 		
-		case 2:
-			airLine = LAN;
-			break;
+		String line = br.readLine();
+		String[] parts = new String[17];
+		while(line != null) {
+			parts = line.split(" ");	
 			
-		case 3:
-			airLine = IBERIA;
-			break;
-			
-		case 4: 
-			airLine = FLY;
-			break;
-
-		default:
-			break;
+			line = br.readLine();
 		}
 		
-		return airLine;
+		Random r = new Random();
+		
+		int i = r.nextInt(17);
+		
+		this.airLine = parts[i];
+		
+		br.close();
+		fr.close();
 	}
-
+	
 	private String randomFlight() {
 		String number = "";
 		Random r = new Random();
@@ -81,47 +69,26 @@ public class Flight implements Comparable<Flight>{
 		return number;
 	}
 	
-	private String randomDestiny() {
-		String city = "";
-		int i = (int)(Math.random()*8) + 1;
-		switch (i) {
-		case 1:
-			city = BOGOTA;
-			break;
+	private void randomDestiny() throws IOException {
+		FileReader fr = new FileReader(new File(PATH_AIRLINES));
+		BufferedReader br = new BufferedReader(fr);
 		
-		case 2:
-			city = MIAMI;
-			break;
+		String line = br.readLine();
+		String[] parts = new String[13];
+		while(line != null) {
+			parts = line.split(" ");	
 			
-		case 3:
-			city = MADRID;
-			break;
-			
-		case 4: 
-			city = TOKIO;
-			break;
-		
-		case 5:
-			city = NEWYORK;
-			break;
-		
-		case 6:
-			city = DUBAI;
-			break;
-			
-		case 7:
-			city = PARIS;
-			break;
-			
-		case 8: 
-			city = BERLIN;
-			break;
-
-		default:
-			break;
+			line = br.readLine();
 		}
 		
-		return city;
+		Random r = new Random();
+		
+		int i = r.nextInt(13);
+		
+		this.destiny = parts[i];
+		
+		br.close();
+		fr.close();
 	}
 	
 	public void randomDate() {
@@ -158,7 +125,7 @@ public class Flight implements Comparable<Flight>{
 	}
 
 	public String getDestiny() {
-		return Destiny;
+		return destiny;
 	}
 
 	public int getGate() {

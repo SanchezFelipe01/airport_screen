@@ -1,5 +1,6 @@
 package ui;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 import javafx.application.Application;
@@ -12,14 +13,12 @@ import model.Airport;
 public class Main extends Application{
 	
 
-	public static void main(String[] args) {
-		//Airport a = new Airport(10);
-		//System.out.println(a.report());
-		//Scanner s = new Scanner(System.in);
-		//String i = s.nextLine();
-		//String h = s.nextLine();
-		//int m = s.nextInt();
-		//a.searchByAirLine(h);
+	public static void main(String[] args) throws IOException {
+		Airport a = new Airport(10);
+		System.out.println(a.report());
+		Scanner s = new Scanner(System.in);
+		//int i = s.nextInt();
+		//a.searchByGate(i);
 		//System.out.println(a.report());
 		launch(args);
 		
