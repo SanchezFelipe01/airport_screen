@@ -27,7 +27,7 @@
       </HBox>
    </top>
    <right>
-      <VBox prefHeight="345.0" prefWidth="156.0" BorderPane.alignment="CENTER">
+      <VBox prefHeight="345.0" prefWidth="179.0" BorderPane.alignment="CENTER">
          <children>
             <HBox prefHeight="51.0" prefWidth="156.0">
                <children>
@@ -72,7 +72,7 @@
             <HBox prefHeight="38.0" prefWidth="156.0">
                <children>
                   <Label text="DURATION: " />
-                  <Label alignment="CENTER_RIGHT" prefHeight="19.0" prefWidth="90.0" text="0" />
+                  <Label fx:id="time" alignment="CENTER_RIGHT" prefHeight="19.0" prefWidth="90.0" text="0" />
                </children>
             </HBox>
             <HBox prefHeight="38.0" prefWidth="156.0">
@@ -85,6 +85,6 @@
       </VBox>
    </right>
    <center>
-      <ScrollPane fx:id="scrollPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      <ScrollPane fx:id="scrollPane" prefHeight="345.0" prefWidth="492.0" BorderPane.alignment="CENTER" />
    </center>
 </BorderPane>

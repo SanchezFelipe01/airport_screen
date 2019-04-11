@@ -17,6 +17,9 @@ public class ScreenController {
 	private Airport airport;
 	
 	@FXML
+    private Label time;
+	
+	@FXML
 	private ScrollPane scrollPane;
 	
     @FXML
@@ -26,12 +29,13 @@ public class ScreenController {
     private TextField newNumber;
 
     @FXML
-    void SortByGate(ActionEvent event) {
-    	
+    void newList(ActionEvent event) {
     	convertedHour();
-    	airport.sortByGate();
+    	int n = Integer.valueOf(newNumber.getText());
+    	airport = new Airport(n);
+    	
+    	airport.sortByDate();
     	VBox vbox = new VBox();
-    	vbox.getChildren().clear();
     	Label l;
     	
     	l = new Label();
@@ -41,16 +45,14 @@ public class ScreenController {
     	
     	scrollPane.setContent(vbox);
     }
-
+    
     @FXML
-    void newList(ActionEvent event) {
+    void SortByGate(ActionEvent event) {
+    	
     	convertedHour();
-    }
-
-    @FXML
-    void sortByAirline(ActionEvent event) {
-    	convertedHour();
-    	airport.sortByAirLine();
+    	Long time1 = System.currentTimeMillis();
+    	airport.sortByGate();
+    	Long time2 = System.currentTimeMillis();
     	VBox vbox = new VBox();
     	vbox.getChildren().clear();
     	Label l;
@@ -59,14 +61,38 @@ public class ScreenController {
     	l.setText(airport.report());
 		vbox.getChildren().add(l);
 		
+		String st = String.valueOf(time2-time1);
+		
+    	time.setText(st);
+    	scrollPane.setContent(vbox);
+    }
+
+    @FXML
+    void sortByAirline(ActionEvent event) {
+    	convertedHour();
+    	Long time1 = System.currentTimeMillis();
+    	airport.sortByAirLine();
+    	Long time2 = System.currentTimeMillis();
+    	VBox vbox = new VBox();
+    	vbox.getChildren().clear();
+    	Label l;
     	
+    	l = new Label();
+    	l.setText(airport.report());
+		vbox.getChildren().add(l);
+		
+		String st = String.valueOf(time2-time1);
+		
+    	time.setText(st);
     	scrollPane.setContent(vbox);
     }
 
     @FXML
     void sortByDate(ActionEvent event) {
     	convertedHour();
+    	Long time1 = System.currentTimeMillis();
     	airport.sortByDate();
+    	Long time2 = System.currentTimeMillis();
     	VBox vbox = new VBox();
     	vbox.getChildren().clear();
     	Label l;
@@ -75,14 +101,18 @@ public class ScreenController {
     	l.setText(airport.report());
 		vbox.getChildren().add(l);
 		
+		String st = String.valueOf(time2-time1);
     	
+		time.setText(st);
     	scrollPane.setContent(vbox);
     }
 
     @FXML
     void sortByDestiny(ActionEvent event) {
     	convertedHour();
+    	Long time1 = System.currentTimeMillis();
     	airport.sortByDestiny();
+    	Long time2 = System.currentTimeMillis();
     	VBox vbox = new VBox();
     	vbox.getChildren().clear();
     	Label l;
@@ -91,14 +121,18 @@ public class ScreenController {
     	l.setText(airport.report());
 		vbox.getChildren().add(l);
 		
+		String st = String.valueOf(time2-time1);
     	
+		time.setText(st);
     	scrollPane.setContent(vbox);
     }
 
     @FXML
     void sortByFlight(ActionEvent event) {
     	convertedHour();
+    	Long time1 = System.currentTimeMillis();
     	airport.sortByFlightNumber();
+    	Long time2 = System.currentTimeMillis();
     	VBox vbox = new VBox();
     	vbox.getChildren().clear();
     	Label l;
@@ -107,14 +141,18 @@ public class ScreenController {
     	l.setText(airport.report());
 		vbox.getChildren().add(l);
 		
-    	
+		String st = String.valueOf(time2-time1);
+		
+    	time.setText(st);
     	scrollPane.setContent(vbox);
     }
 
     @FXML
     void sortByTime(ActionEvent event) {
     	convertedHour();
+    	Long time1 = System.currentTimeMillis();
     	airport.sortByHour();
+    	Long time2 = System.currentTimeMillis();
     	VBox vbox = new VBox();
     	vbox.getChildren().clear();
     	Label l;
@@ -123,7 +161,9 @@ public class ScreenController {
     	l.setText(airport.report());
 		vbox.getChildren().add(l);
 		
+		String st = String.valueOf(time2-time1);
     	
+		time.setText(st);
     	scrollPane.setContent(vbox);
     }
     
