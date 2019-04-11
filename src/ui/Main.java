@@ -1,5 +1,7 @@
 package ui;
 
+import java.util.Scanner;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,12 +15,11 @@ public class Main extends Application{
 	public static void main(String[] args) {
 		Airport a = new Airport(10);
 		System.out.println(a.report());
-		a.sortByDestiny();
-		//a.sortByFlightNumber();
-		//a.sortByAirLine();
-		//a.sortByGate();
-		//a.sortByHour();
-		//a.sortByDate();
+		Scanner s = new Scanner(System.in);
+		//String i = s.nextLine();
+		int h = s.nextInt();
+		//int m = s.nextInt();
+		a.searchByGate(h);
 		System.out.println(a.report());
 		//launch(args);
 		
