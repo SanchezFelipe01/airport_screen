@@ -5,7 +5,7 @@ import java.time.LocalTime;
 import java.util.Calendar;
 import java.util.Random;
 
-public class Flight {
+public class Flight implements Comparable<Flight>{
 	
 	private String date;
 	private LocalTime hour;
@@ -83,7 +83,7 @@ public class Flight {
 	
 	private String randomDestiny() {
 		String city = "";
-		int i = (int)(Math.random()*4) + 1;
+		int i = (int)(Math.random()*8) + 1;
 		switch (i) {
 		case 1:
 			city = BOGOTA;
@@ -182,6 +182,19 @@ public class Flight {
     	hour1 = h + ":" + m + " " + p;
     	
     	return hour1;
+	}
+
+	@Override
+	public int compareTo(Flight otherFlight) {
+		int comparation;
+		if(airLine.compareTo(otherFlight.airLine)<0) {
+			comparation = -1;
+		}else if(airLine.compareTo(otherFlight.airLine)>0) {
+			comparation = 1;
+		}else {
+			comparation = 0;
+		}
+		return comparation;
 	}
 	
 }

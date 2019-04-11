@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Arrays;
+
 public class Airport {
 	
 	private Flight[] flights;
@@ -57,7 +59,7 @@ public class Airport {
 	}
 //_________________________________________________________________________________________
 	
-	public void sortByGate() {
+	public void sortByGate() { //Bubble sorting 
 		
 		for(int i = 0; i < flights.length - 1; i++)
         {
@@ -75,6 +77,27 @@ public class Airport {
 	}
 	
 //_________________________________________________________________________________________
+	
+	public void sortByAirLine() {
+		
+		Arrays.sort(flights);
+		
+	}
+//_________________________________________________________________________________________
+	
+	public void sortByFlightNumber() {
+		
+		Arrays.sort(flights,new FlightsNumberComparator());
+		
+	}
+	
+//__________________________________________________________________________________________
+	
+	public void sortByDestiny() {
+		Arrays.sort(flights,new FlightsDestinyComparator());
+	}
+	
+//___________________________________________________________________________________________
 	
 	public String report() {
 		String msg = "DATE		HOUR		AIRLINE		FLIGHT		DESTINY		GATE" + "\n";
