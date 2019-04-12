@@ -77,8 +77,9 @@
             </HBox>
             <HBox prefHeight="31.0" prefWidth="179.0">
                <children>
-                  <TextField fx:id="sHour" prefHeight="25.0" prefWidth="74.0" promptText="Hour" />
+                  <TextField fx:id="sHour" prefHeight="25.0" prefWidth="60.0" promptText="Hour" />
                   <TextField fx:id="sMinutes" prefHeight="25.0" prefWidth="64.0" promptText="Minutes" />
+                  <TextField fx:id="ampm" prefHeight="25.0" prefWidth="59.0" promptText="AM/PM" />
                </children>
             </HBox>
             <HBox prefHeight="32.0" prefWidth="179.0">

@@ -70,11 +70,11 @@ public class Flight implements Comparable<Flight>{
 	}
 	
 	private void randomDestiny() throws IOException {
-		FileReader fr = new FileReader(new File(PATH_AIRLINES));
+		FileReader fr = new FileReader(new File(PATH_CITIES));
 		BufferedReader br = new BufferedReader(fr);
 		
 		String line = br.readLine();
-		String[] parts = new String[13];
+		String[] parts = new String[90];
 		while(line != null) {
 			parts = line.split(" ");	
 			
@@ -83,7 +83,7 @@ public class Flight implements Comparable<Flight>{
 		
 		Random r = new Random();
 		
-		int i = r.nextInt(13);
+		int i = r.nextInt(90);
 		
 		this.destiny = parts[i];
 		

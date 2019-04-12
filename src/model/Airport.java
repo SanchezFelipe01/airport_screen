@@ -131,18 +131,22 @@ public class Airport {
 		if (index != -1) {
 			
 			flight = flights[index];
-			msg = flight.getDate() + "\t" + flight.getHour() + "\t" + flight.getAirLine() + "\t" + flight.getnFlight() + "\t" + flight.getDestiny() + "\t" + flight.getGate();
+			msg = flight.getDate() + "\t" + flight.getConvertedHour() + "\t" + flight.getAirLine() + "\t" + flight.getnFlight() + "\t" + flight.getDestiny() + "\t" + flight.getGate();
 		}
 		return msg;
 		
 	}
 //_____________________________________________________________________________________________
 	
-	public String searchByHour(int h, int m) {
+	public String searchByHour(int h, int m, String d) {
 		String msg = "Can not find the flight";
 		Flight flight;
 		int index = -1;
 		boolean found = false;
+		
+		if (d.equalsIgnoreCase("pm")) {
+			h += 12;
+		}
 		
 		for(int I = 0; I < flights.length && found == false; I++) {
         	if (flights[I].getHour().getHour() == h && flights[I].getHour().getMinute() == m) {
@@ -155,7 +159,7 @@ public class Airport {
 		if (index != -1) {
 		
 			flight = flights[index];
-			msg = flight.getDate() + "\t" + flight.getHour() + "\t" + flight.getAirLine() + "\t" + flight.getnFlight() + "\t" + flight.getDestiny() + "\t" + flight.getGate();
+			msg = flight.getDate() + "\t" + flight.getConvertedHour() + "\t" + flight.getAirLine() + "\t" + flight.getnFlight() + "\t" + flight.getDestiny() + "\t" + flight.getGate();
 		}
 
 		return msg;
@@ -188,7 +192,7 @@ public class Airport {
         if (index != -1) {
 			
         	flight = flights[index];
-        	msg = flight.getDate() + "\t" + flight.getHour() + "\t" + flight.getAirLine() + "\t" + flight.getnFlight() + "\t" + flight.getDestiny() + "\t" + flight.getGate();
+        	msg = flight.getDate() + "\t" + flight.getConvertedHour() + "\t" + flight.getAirLine() + "\t" + flight.getnFlight() + "\t" + flight.getDestiny() + "\t" + flight.getGate();
         	System.out.println(msg);
         }
         return msg;
@@ -219,7 +223,7 @@ public class Airport {
         if (index != -1) {
 			
         	flight = flights[index];
-        	msg = flight.getDate() + "\t" + flight.getHour() + "\t" + flight.getAirLine() + "\t" + flight.getnFlight() + "\t" + flight.getDestiny() + "\t" + flight.getGate();
+        	msg = flight.getDate() + "\t" + flight.getConvertedHour() + "\t" + flight.getAirLine() + "\t" + flight.getnFlight() + "\t" + flight.getDestiny() + "\t" + flight.getGate();
         
         }
         System.out.println(msg);
@@ -253,7 +257,7 @@ public class Airport {
         if (index != -1) {
 			
         	flight = flights[index];
-        	msg = flight.getDate() + "\t" + flight.getHour() + "\t" + flight.getAirLine() + "\t" + flight.getnFlight() + "\t" + flight.getDestiny() + "\t" + flight.getGate();
+        	msg = flight.getDate() + "\t" + flight.getConvertedHour() + "\t" + flight.getAirLine() + "\t" + flight.getnFlight() + "\t" + flight.getDestiny() + "\t" + flight.getGate();
         
         }
         System.out.println(msg);
@@ -280,7 +284,7 @@ public class Airport {
 		if (index != -1) {
 			
 			flight = flights[index];
-			msg = flight.getDate() + "\t" + flight.getHour() + "\t" + flight.getAirLine() + "\t" + flight.getnFlight() + "\t" + flight.getDestiny() + "\t" + flight.getGate();
+			msg = flight.getDate() + "\t" + flight.getConvertedHour() + "\t" + flight.getAirLine() + "\t" + flight.getnFlight() + "\t" + flight.getDestiny() + "\t" + flight.getGate();
 			
 		}
 		

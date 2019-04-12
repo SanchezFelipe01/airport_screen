@@ -33,6 +33,9 @@ public class ScreenController {
     private TextField sMinutes;
     
     @FXML
+    private TextField ampm;
+    
+    @FXML
     private TextField value;
 
     @FXML
@@ -199,7 +202,15 @@ public class ScreenController {
 
     @FXML
     void searchByFlight(ActionEvent event) {
-
+    	VBox vbox = new VBox();
+    	
+    	Label l;
+    	
+    	l = new Label();
+    	l.setText(airport.searchByFlightNumber(value.getText()));
+    	vbox.getChildren().add(l);
+    	
+    	scrollPane.setContent(vbox);
     }
 
     @FXML
@@ -211,7 +222,8 @@ public class ScreenController {
     	l = new Label();
     	int h = Integer.valueOf(sHour.getText());
     	int m = Integer.valueOf(sMinutes.getText());
-    	l.setText(airport.searchByHour(h, m));
+    	String d = ampm.getText();
+    	l.setText(airport.searchByHour(h, m, d));
     	vbox.getChildren().add(l);
     	
     	scrollPane.setContent(vbox);
