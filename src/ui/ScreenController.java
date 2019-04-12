@@ -44,7 +44,7 @@ public class ScreenController {
     	int n = Integer.valueOf(newNumber.getText());
     	airport = new Airport(n);
     	
-    	airport.sortByDate();
+    	airport.sortByHour();
     	VBox vbox = new VBox();
     	Label l;
     	
