@@ -14,12 +14,11 @@ public class Main extends Application{
 	
 
 	public static void main(String[] args) throws IOException {
-		Airport a = new Airport(10);
+		/*Airport a = new Airport(10);
 		System.out.println(a.report());
 		Scanner s = new Scanner(System.in);
-		//int i = s.nextInt();
-		//a.searchByGate(i);
-		//System.out.println(a.report());
+		String i = s.nextLine();
+		a.print(a.searchByDestiny(i));*/
 		launch(args);
 		
 	}

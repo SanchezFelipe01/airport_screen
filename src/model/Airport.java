@@ -166,43 +166,33 @@ public class Airport {
 	}
 //_____________________________________________________________________________________________
 	
-	public String searchByGate(int gate) {
+	public int searchByGate(int gate) {
 		
 		sortByGate();
-		
-		String msg = "Can not find the flight";
-		Flight flight;
 		int index = -1;
 		
 		int low = 0;
         int high = flights.length-1;
-        
+        int mid;
         while (low<=high) {
 			
-        	int mid = (low+high) / 2;
+        	mid = (low+high) / 2;
         	if (flights[mid].getGate() < gate) {
 				low = mid + 1;
 			}else if (flights[mid].getGate() > gate) {
 				high = mid - 1;				
 			}else {
 				index = mid;
+				return index;
 			}
 		}
-        
-        if (index != -1) {
-			
-        	flight = flights[index];
-        	msg = flight.getDate() + "\t" + flight.getConvertedHour() + "\t" + flight.getAirLine() + "\t" + flight.getnFlight() + "\t" + flight.getDestiny() + "\t" + flight.getGate();
-        	System.out.println(msg);
-        }
-        return msg;
+        return -1;
 	}
 //_______________________________________________________________________________________________
 	
-	public String searchByAirLine(String airLine) {
+	public int searchByAirLine(String airLine) {
 		sortByAirLine();
-		String msg = "Can not find the flight";
-		Flight flight;
+		
 		int index = -1;
 		
 		int low = 0;
@@ -217,26 +207,32 @@ public class Airport {
 				high = mid - 1;				
 			}else {
 				index = mid;
+				return index;
 			}
 		}
-        
-        if (index != -1) {
-			
-        	flight = flights[index];
+		return -1;
+	}
+     
+//___________________________________________________________________________________________________________
+	
+	public String print(int index) {
+		
+		String msg = "Can not find the flight";
+		Flight flight;
+		
+		if(index != -1) {
+			flight = flights[index];
         	msg = flight.getDate() + "\t" + flight.getConvertedHour() + "\t" + flight.getAirLine() + "\t" + flight.getnFlight() + "\t" + flight.getDestiny() + "\t" + flight.getGate();
+		}
         
-        }
-        System.out.println(msg);
+
         return msg;
 	}
 //________________________________________________________________________________________________
 	
-	public String searchByDestiny(String destiny) {
+	public int searchByDestiny(String destiny) {
 		
 		sortByDestiny();
-		
-		String msg = "Can not find the flight";
-		Flight flight;
 		int index = -1;
 		
 		int low = 0;
@@ -251,18 +247,10 @@ public class Airport {
 				high = mid - 1;				
 			}else {
 				index = mid;
+				return index;
 			}
 		}
-        
-        if (index != -1) {
-			
-        	flight = flights[index];
-        	msg = flight.getDate() + "\t" + flight.getConvertedHour() + "\t" + flight.getAirLine() + "\t" + flight.getnFlight() + "\t" + flight.getDestiny() + "\t" + flight.getGate();
-        
-        }
-        System.out.println(msg);
-        return msg;
-		
+     return -1;	
 	}
 //________________________________________________________________________________________________
 	
